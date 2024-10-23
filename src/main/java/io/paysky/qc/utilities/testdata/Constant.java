@@ -2,14 +2,14 @@ package io.paysky.qc.utilities.testdata;
 
 public class Constant {
 
-    public static final String Admin_user = "randa.khaled";
-    public static final String Admin_password = "1234";
-    public static final String OTP = "1111";
-    public static final String Invalid_Admin_user = "randa.khaled.invalid";
-    public static final String Invalid_Admin_password = "12345";
-    public static final String Invalid_OTP = "1234";
-    public static final String New_password = "P@ssw0rd1";
-    public static final String Confirm_password = "P@ssw0rd1";
-    public static final String New_password_return_back = "P@ssw0rd";
-    public static final String Confirm_password_return_back = "P@ssw0rd";
+    public static final String Merchant_user = "777777785";
+    public static final String Merchant_password = "1qaz!QAZzz";
+    public static final String Operation_user = "abdullah.ops.ug.stg@paysky.io";
+    public static final String Operation_password = "1qaz!QAZzz";
+    public static final String Admin_user = "abdullah.admin.ug.stg@paysky.io";
+    public static final String Admin_password = "1qaz!QAZzz";
+    public static final String Customer_user = "777777798";
+    public static final String Customer_password = "1qaz!QAZzz";
+    public static String ProductName;
+    public static String OrderNumber;
 }

@@ -2,12 +2,7 @@
 <suite name="MTN-Portal">
     <test name="Login" verbose="1">
         <classes>
-            <class name="io.paysky.qc.LoginTest"/>
-        </classes>
-    </test>
-    <test name="Change-Password" verbose="2">
-        <classes>
-            <class name="io.paysky.qc.Change_password_test"/>
+            <class name="io.paysky.qc.Create_order"/>
         </classes>
     </test>
     <listeners>

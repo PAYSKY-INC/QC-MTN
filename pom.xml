@@ -87,11 +87,11 @@
             <artifactId>custom-logo-plugin</artifactId>
             <version>${allure.version}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>io.github.bonigarcia</groupId>-->
-<!--            <artifactId>webdrivermanager</artifactId>-->
-<!--            <version>5.3.0</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.9.1</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>

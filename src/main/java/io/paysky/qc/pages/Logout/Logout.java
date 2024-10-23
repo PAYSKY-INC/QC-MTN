@@ -12,11 +12,18 @@ public class Logout {
         driver = DriverFactory.getDriver();
     }
 
-    public void Log_out() throws InterruptedException {
-        driver.findElement(By.id("navbarDropdown")).click();
+    public void Log_out_merchant_portal() throws InterruptedException {
+        driver.findElement(By.xpath("//a[contains(@href, '#')]")).click();
         Thread.sleep(5000);
-        driver.findElement(By.linkText("Log out")).click();
+    }
+
+    public void Log_out_operation_portal() throws InterruptedException {
+        driver.findElement(By.xpath("//a[contains(@href, '#')]")).click();
         Thread.sleep(5000);
+    }
+
+    public void Close_driver() throws InterruptedException {
+        driver.close();
     }
 
 }

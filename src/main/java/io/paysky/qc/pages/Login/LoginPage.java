@@ -6,6 +6,7 @@ import io.paysky.qc.utilities.testdata.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
@@ -17,54 +18,62 @@ public class LoginPage {
         driver = DriverFactory.getDriver();
     }
 
-    public void LoginURL() {
-        driver.get(GlobalProperties.getProperty("Login_main_URL"));
-    }
-
-    public void Valid_Login_with_admin_user() throws InterruptedException {
-        driver.findElement(By.id("UserName")).sendKeys(Constant.Admin_user);
-        driver.findElement(By.id("userpassword")).sendKeys(Constant.Admin_password);
-        driver.findElement(By.id("sendotp")).click();
+    public void Login_merchant_user() throws InterruptedException {
+        driver.get(GlobalProperties.getProperty("Merchant_Portal"));
+        Thread.sleep(10000);
+        driver.findElement(By.id("phone")).sendKeys(Constant.Merchant_user);
+        driver.findElement(By.xpath("/html/body/app-root/app-mobile-verification/div/div/div/div[5]/div/app-button/div/button")).click();
         Thread.sleep(5000);
-        driver.findElement(By.id("otp")).sendKeys(Constant.OTP);
-        driver.findElement(By.id("signinbtn")).click();
+        driver.findElement(By.id("mat-input-0")).sendKeys(Constant.Merchant_password);
+        driver.findElement(By.xpath("/html/body/app-root/app-login/div/div/div/div/form/div[2]/div[2]/app-button/div/button")).click();
         Thread.sleep(10000);
     }
 
-    public void Invalid_credentials_with_admin_user() throws InterruptedException {
-        driver.findElement(By.id("UserName")).sendKeys(Constant.Invalid_Admin_user);
-        driver.findElement(By.id("userpassword")).sendKeys(Constant.Invalid_Admin_password);
-        driver.findElement(By.id("sendotp")).click();
-        Thread.sleep(5000);
-        driver.findElement(By.id("otp")).sendKeys(Constant.OTP);
-        driver.findElement(By.id("signinbtn")).click();
-        String Error_Message = driver.findElement(By.id("validateSummaryDiv")).getText();
-        Assert.assertEquals(Error_Message, "Invalid user name or password.");
-        Thread.sleep(5000);
-    }
-
-    public void Invalid_OTP_Login_with_admin_user() throws InterruptedException {
-        driver.findElement(By.id("UserName")).sendKeys(Constant.Admin_user);
-        driver.findElement(By.id("userpassword")).sendKeys(Constant.Admin_password);
-        driver.findElement(By.id("sendotp")).click();
-        Thread.sleep(5000);
-        driver.findElement(By.id("otp")).sendKeys(Constant.Invalid_OTP);
-        driver.findElement(By.id("signinbtn")).click();
-        Thread.sleep(2000);
-        String Error_Message = driver.findElement(By.id("validateSummaryDiv")).getText();
-        Assert.assertEquals(Error_Message, "Code is not verified.");
+    public void Login_operation_user() throws InterruptedException {
+        driver.get(GlobalProperties.getProperty("Operation_Portal"));
+        Thread.sleep(10000);
+        driver.findElement(By.id("mat-input-0")).click();
+        driver.findElement(By.cssSelector("#mat-option-3 .country-list-item")).click();
+        driver.findElement(By.id("input")).sendKeys(Constant.Operation_user);
+        driver.findElement(By.cssSelector(".input-group > #input")).sendKeys(Constant.Operation_password);
+        driver.findElement(By.cssSelector(".block")).click();
         Thread.sleep(5000);
     }
 
-    public void Login_clear_credentials() throws InterruptedException {
-        driver.findElement(By.id("UserName")).clear();
-        driver.findElement(By.id("userpassword")).clear();
+    public void Login_admin_user() throws InterruptedException {
+        driver.get(GlobalProperties.getProperty("Admin_Portal"));
+        Thread.sleep(10000);
+        driver.findElement(By.id("mat-input-0")).click();
+        driver.findElement(By.cssSelector("#mat-option-3 .country-list-item")).click();
+        driver.findElement(By.id("input")).sendKeys(Constant.Admin_user);
+        driver.findElement(By.cssSelector(".input-group > #input")).sendKeys(Constant.Admin_password);
+        driver.findElement(By.cssSelector(".block")).click();
         Thread.sleep(5000);
     }
 
-    public  void Reload_page(){
-        Actions actions = new Actions(driver);
-        actions.keyDown(Keys.CONTROL).sendKeys("r").keyUp(Keys.CONTROL).perform();
+    public void Login_customer_user() throws InterruptedException {
+        driver.get(GlobalProperties.getProperty("Customer_Portal"));
+        Thread.sleep(10000);
+        driver.findElement(By.xpath("/html/body/modal-container/div[2]/div/app-cookie-modal/div/div/div[4]/button[1]")).click();
+        driver.findElement(By.xpath("/html/body/app-root/app-mtn-tenant-configuration/div/div[2]/div[2]/div/div/div[2]/div[3]/img")).click();
+        Thread.sleep(10000);
+        driver.get(GlobalProperties.getProperty("Customer_Portal_Login"));
+        driver.get(GlobalProperties.getProperty("Customer_Portal_Login"));
+        Thread.sleep(5000);
+        driver.findElement(By.id("phone")).sendKeys(Constant.Customer_user);
+        driver.findElement(By.cssSelector(".p-inputtext")).sendKeys(Constant.Customer_password);
+        driver.findElement(By.cssSelector(".p-button-label")).click();
+        {
+            WebElement element = driver.findElement(By.cssSelector(".p-button-label"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element).perform();
+        }
+        {
+            WebElement element = driver.findElement(By.tagName("body"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element, 0, 0).perform();
+        }
+        Thread.sleep(10000);
     }
 
 }

@@ -1,5 +1,6 @@
 package io.paysky.qc.utilities.selenium;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -26,8 +27,8 @@ public class DriverFactory {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         // Use WebDriverManager to set up the latest Chrome driver
-        //WebDriverManager.chromedriver();
-        System.setProperty("webdriver.chrome.driver", "./src/main/resources/chromedriver.exe");
+        WebDriverManager.chromedriver();
+        //System.setProperty("webdriver.chrome.driver", "./src/main/resources/chromedriver.exe");
         return new ChromeDriver(options);
     }
 }

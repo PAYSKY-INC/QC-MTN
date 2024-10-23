@@ -9,13 +9,13 @@ import java.io.InputStream;
 
 public class OnboardingPage {
 
-    private DriverFactory driverFactory;
+    private DriverFactory driver;
 
     String propFileName = "config.properties";
 
     @Test
     public void setUp() {
-        driverFactory = new DriverFactory();
+        driver = new DriverFactory();
 
         try {
             InputStream input = new FileInputStream("./src/main/resources/" + propFileName);

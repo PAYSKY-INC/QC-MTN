@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="QC-GIM-Portal" />
+        <module name="QC-MTN" />
       </profile>
     </annotationProcessing>
   </component>
