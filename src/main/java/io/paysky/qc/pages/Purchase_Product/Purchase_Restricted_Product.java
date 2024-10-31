@@ -7,16 +7,11 @@ import org.openqa.selenium.WebDriver;
 
 public class Purchase_Restricted_Product {
 
-
     private WebDriver driver;
-
-    Constant constant = new Constant();
-
 
     public Purchase_Restricted_Product() {
         driver = DriverFactory.getDriver();
     }
-
 
     public void PurchaseRestrictedProduct() throws InterruptedException {
         Thread.sleep(10000);

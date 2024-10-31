@@ -14,9 +14,6 @@ public class CreateCategory {
 
     private WebDriver driver;
 
-    Constant constant = new Constant();
-
-
     public CreateCategory() {
         driver = DriverFactory.getDriver();
     }
@@ -25,28 +22,23 @@ public class CreateCategory {
         Thread.sleep(5000);
         driver.findElement(By.xpath("//span[contains(.,'Categories Managers')]")).click();
         Thread.sleep(10000);
-        driver.findElement(By.xpath("//ng-select/div/div/div[2]/input")).sendKeys(constant.ExistingCategory);
+        driver.findElement(By.xpath("//ng-select/div/div/div[2]/input")).sendKeys(Constant.ExistingCategory);
         driver.findElement(By.xpath("//div[contains(@class, 'ng-option-marked')]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//img[@alt='Some textual description of gear.svg']")).click();
-
         Actions move = new Actions(driver);
         Thread.sleep(1000);
-
         WebElement AgeVerification = driver.findElement(By.xpath("//*[text() =' Age verification ']"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", AgeVerification);
         Thread.sleep(1000);
-
         // Find all elements with aria-checked
         List<WebElement> ariaCheckedElements = driver.findElements(By.xpath("//*[@aria-checked]"));
-
         // Check if there are at least 8 occurrences
         if (ariaCheckedElements.size() >= 8) {
             // Get the eighth element (index 7)
             WebElement eighthElement = ariaCheckedElements.get(7);
             boolean toggleState = Boolean.parseBoolean(eighthElement.getAttribute("aria-checked"));
-
             if (toggleState) {
                 driver.findElement(By.xpath("//span/p-inputnumber/span/input")).clear();
                 Thread.sleep(5000);
@@ -56,41 +48,35 @@ public class CreateCategory {
         } else {
             System.out.println("Less than 8 occurrences of aria-checked found.");
         }
-
-        driver.findElement(By.xpath("//span/p-inputnumber/span/input")).sendKeys(constant.MinAge);
+        driver.findElement(By.xpath("//span/p-inputnumber/span/input")).sendKeys(Constant.MinAge);
         WebElement SaveButton = driver.findElement(By.xpath("//*[@class='save-btn-valid']"));
         js.executeScript("arguments[0].scrollIntoView(true);", SaveButton);
         Thread.sleep(1000);
         SaveButton.click();
-        Thread.sleep(1000);
+        Thread.sleep(10000);
     }
 
     public void AgeVerificationWithMax122Year()throws InterruptedException {
         Thread.sleep(10000);
         driver.findElement(By.xpath("//span[contains(.,'Categories Managers')]")).click();
         Thread.sleep(10000);
-        driver.findElement(By.xpath("//ng-select/div/div/div[2]/input")).sendKeys(constant.ExistingCategory);
+        driver.findElement(By.xpath("//ng-select/div/div/div[2]/input")).sendKeys(Constant.ExistingCategory);
         driver.findElement(By.xpath("//div[contains(@class, 'ng-option-marked')]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//img[@alt='Some textual description of gear.svg']")).click();
-
         Actions move = new Actions(driver);
         Thread.sleep(1000);
-
         WebElement AgeVerification = driver.findElement(By.xpath("//*[text() =' Age verification ']"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", AgeVerification);
         Thread.sleep(1000);
-
         // Find all elements with aria-checked
         List<WebElement> ariaCheckedElements = driver.findElements(By.xpath("//*[@aria-checked]"));
-
         // Check if there are at least 8 occurrences
         if (ariaCheckedElements.size() >= 8) {
             // Get the eighth element (index 7)
             WebElement eighthElement = ariaCheckedElements.get(7);
             boolean toggleState = Boolean.parseBoolean(eighthElement.getAttribute("aria-checked"));
-
             if (toggleState) {
                 driver.findElement(By.xpath("//span/p-inputnumber/span/input")).clear();
                 Thread.sleep(5000);
@@ -100,14 +86,11 @@ public class CreateCategory {
         } else {
             System.out.println("Less than 8 occurrences of aria-checked found.");
         }
-
-        driver.findElement(By.xpath("//span/p-inputnumber/span/input")).sendKeys(constant.MaxAge);
+        driver.findElement(By.xpath("//span/p-inputnumber/span/input")).sendKeys(Constant.MaxAge);
         WebElement SaveButton = driver.findElement(By.xpath("//*[@class='save-btn-valid']"));
         js.executeScript("arguments[0].scrollIntoView(true);", SaveButton);
         Thread.sleep(1000);
         SaveButton.click();
+        Thread.sleep(10000);
     }
-
-
-
 }

@@ -14,41 +14,37 @@ public class Age_Verification {
 
     final OnboardingPage onboardingPage = new OnboardingPage();
     final LoginPage loginPage = new LoginPage();
-    final CreateCategory AgeVerification = new CreateCategory();
-    final Logout logout = new Logout();
+    final CreateCategory CreateCategory = new CreateCategory();
+    final Logout logoutPage = new Logout();
 
-
-
-
-
-    @org.testng.annotations.Test(priority = 2)
+    @org.testng.annotations.Test(priority = 1)
+    @Description("Creating an age-restricted category/subcategory > Create Category with adding age verification with valid value")
+    @Link("https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/65530")
+    @Owner("Eman Mohamed")
+    @Tag("End-To-End")
 
     public void checkAgeVerificationWithMinAgeIs10() throws InterruptedException{
         onboardingPage.setUp();
         loginPage.Login_operation_user();
-        AgeVerification.AgeVerificationWithMin10Year();
-        logout.Log_out_operation_portal();
+        CreateCategory.AgeVerificationWithMin10Year();
+        logoutPage.Log_out_operation_portal();
     }
 
+    @org.testng.annotations.Test(priority = 2)
+    @Description("Creating an age-restricted category/subcategory > Create Category with adding age verification with valid value")
+    @Link("https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/65530")
+    @Owner("Eman Mohamed")
+    @Tag("End-To-End")
 
-
-
-    @org.testng.annotations.Test(priority = 3)
     public void checkAgeVerificationWithMaxAgeIs122() throws InterruptedException{
         onboardingPage.setUp();
         loginPage.Login_operation_user();
-        AgeVerification.AgeVerificationWithMax122Year();
-        logout.Log_out_operation_portal();
+        CreateCategory.AgeVerificationWithMax122Year();
+        logoutPage.Log_out_operation_portal();
     }
-   @AfterTest
+
+    @AfterTest
     public void CloseDriver() throws InterruptedException {
-        logout.Close_driver();
+        logoutPage.Close_driver();
     }
-
-
-    }
-
-
-
-
-
+}

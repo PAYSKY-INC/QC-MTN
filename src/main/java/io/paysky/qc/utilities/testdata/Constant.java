@@ -12,7 +12,7 @@ public class Constant {
     public static final String Customer_password = "1qaz!QAZzz";
     public static String ProductName;
     public static String OrderNumber;
-    public static String ExistingCategory = "hidden Category";
+    public static final String ExistingCategory = "hidden Category";
     public static String MinAge = "+10";
     public static String MaxAge = "122";
 }
