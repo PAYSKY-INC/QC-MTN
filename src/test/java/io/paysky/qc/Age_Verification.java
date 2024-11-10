@@ -91,12 +91,12 @@ public class Age_Verification {
 
 
 
-   /* @AfterTest
+   @AfterTest
     public void CloseDriver() throws InterruptedException {
         logout.Close_driver();
     }
 
-    */
+
 
 
 
