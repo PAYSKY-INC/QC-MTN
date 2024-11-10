@@ -5,6 +5,11 @@
             <class name="io.paysky.qc.Create_order"/>
         </classes>
     </test>
+<!--    <test name="Login" verbose="2">-->
+<!--        <classes>-->
+<!--            <class name="io.paysky.qc.Age_Verification"/>-->
+<!--        </classes>-->
+<!--    </test>-->
     <listeners>
         <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
     </listeners>
