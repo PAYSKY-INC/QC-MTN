@@ -15,4 +15,8 @@ public class Constant {
     public static String ExistingCategory = "hidden Category";
     public static String MinAge = "+10";
     public static String MaxAge = "122";
+    public static String InvalidMinAge = "9";
+    public static String InvalidMaxAge = "123";
+
+
 }

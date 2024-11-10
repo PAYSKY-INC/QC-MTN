@@ -8,7 +8,11 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import java.time.Duration;
 
 public class LoginPage {
 
@@ -52,15 +56,16 @@ public class LoginPage {
     }
 
     public void Login_customer_user() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(500));
         driver.get(GlobalProperties.getProperty("Customer_Portal"));
-        Thread.sleep(10000);
-        driver.findElement(By.xpath("/html/body/modal-container/div[2]/div/app-cookie-modal/div/div/div[4]/button[1]")).click();
+       WebElement element1=  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/modal-container/div[2]/div/app-cookie-modal/div/div/div[4]/button[1]")));
+        element1.click();
         driver.findElement(By.xpath("/html/body/app-root/app-mtn-tenant-configuration/div/div[2]/div[2]/div/div/div[2]/div[3]/img")).click();
-        Thread.sleep(10000);
+        Thread.sleep(20000);
         driver.get(GlobalProperties.getProperty("Customer_Portal_Login"));
         driver.get(GlobalProperties.getProperty("Customer_Portal_Login"));
-        Thread.sleep(5000);
-        driver.findElement(By.id("phone")).sendKeys(Constant.Customer_user);
+        WebElement CustomerUser = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("phone")));
+      CustomerUser.sendKeys(Constant.Customer_user);
         driver.findElement(By.cssSelector(".p-inputtext")).sendKeys(Constant.Customer_password);
         driver.findElement(By.cssSelector(".p-button-label")).click();
         {
@@ -73,7 +78,7 @@ public class LoginPage {
             Actions builder = new Actions(driver);
             builder.moveToElement(element, 0, 0).perform();
         }
-        Thread.sleep(10000);
+        Thread.sleep(20000);
     }
 
 }
