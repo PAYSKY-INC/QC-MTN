@@ -40,8 +40,9 @@ public class CreateCategory {
     public void AgeVerificationWithMin10Year() throws InterruptedException {
         wait.until(ExpectedConditions.elementToBeClickable(Categories_Managers)).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(SearchField)).sendKeys(constant.ExistingCategory);
+        Thread.sleep(5000);
         driver.findElement(By.xpath("//div[contains(@class, 'ng-option-marked')]")).click();
-        Thread.sleep(1000);
+        Thread.sleep(10000);
         driver.findElement(By.xpath("//img[@alt='Some textual description of gear.svg']")).click();
 
         Actions move = new Actions(driver);
