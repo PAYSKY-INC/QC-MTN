@@ -233,12 +233,8 @@ public class CreateCategory {
        driver.findElement(By.cssSelector(".w-33 > .ng-select-container")).click();
        driver.findElement(By.xpath("//span[contains(.,'Default Template')]")).click();
 
-       String ImageAbsolutePath = Paths.get("C:/Users/EmanMohamedAli/IdeaProjects/QC-MTN/src/main/resources/test.svg").toAbsolutePath().toString();
-       driver.findElement(By.xpath("(//img[@alt='No Image'])[12]")).sendKeys(ImageAbsolutePath);
-
-
-
-
+       String ImageAbsolutePath = Paths.get("src/main/resources/test.svg").toAbsolutePath().toString();
+       driver.findElement(By.xpath("//input[@type='file']")).sendKeys(ImageAbsolutePath);
 
    }
 }
