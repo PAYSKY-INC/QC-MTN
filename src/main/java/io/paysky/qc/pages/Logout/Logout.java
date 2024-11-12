@@ -18,7 +18,7 @@ public class Logout {
     }
 
     public void Log_out_operation_portal() throws InterruptedException {
-        driver.findElement(By.cssSelector("css=strong > .d-flex")).click();
+        driver.findElement(By.xpath("//a[contains(@href, '#')]")).click();
         Thread.sleep(5000);
     }
 
