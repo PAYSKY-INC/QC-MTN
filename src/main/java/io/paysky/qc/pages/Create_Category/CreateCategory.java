@@ -38,6 +38,7 @@ public class CreateCategory {
 
 
     public void AgeVerificationWithMin10Year() throws InterruptedException {
+        Thread.sleep(1000);
         wait.until(ExpectedConditions.elementToBeClickable(Categories_Managers)).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(SearchField)).sendKeys(constant.ExistingCategory);
         Thread.sleep(5000);
@@ -121,6 +122,7 @@ public class CreateCategory {
         js.executeScript("arguments[0].scrollIntoView(true);", SaveButton);
         Thread.sleep(1000);
         SaveButton.click();
+
     }
 
    public void AgeVerificationWithInvalidMinValue() throws Exception {
@@ -235,6 +237,66 @@ public class CreateCategory {
 
        String ImageAbsolutePath = Paths.get("src/main/resources/test.svg").toAbsolutePath().toString();
        driver.findElement(By.xpath("//input[@type='file']")).sendKeys(ImageAbsolutePath);
+       WebElement SaveButton = driver.findElement(By.xpath("//*[@class='save-btn-valid']"));
+       JavascriptExecutor js = (JavascriptExecutor) driver;
+       js.executeScript("arguments[0].scrollIntoView(true);", SaveButton);
+       Thread.sleep(1000);
+       SaveButton.click();
+       Thread.sleep(10000);
+
+
+   }
+   public String createCategoryWithAgeRestriction() throws InterruptedException{
+       Thread.sleep(10000);
+       driver.findElement(By.xpath("//span[contains(.,'Categories Managers')]")).click();
+       Thread.sleep(10000);
+       String CategoryName = faker.buisnessName();
+       driver.findElement(By.xpath("//ng-select/div/div/div[2]/input")).sendKeys(CategoryName);
+       Thread.sleep(100);
+       driver.findElement(By.xpath("//ng-dropdown-panel/div/div[2]/div")).click();
+       Thread.sleep(500);
+       driver.findElement(By.xpath("//img[@alt='Some textual description of gear.svg']")).click();
+       driver.findElement(By.xpath("//form/div/div[2]/app-textbox/field-container/div/input")).sendKeys(faker.buisnessName());
+       Thread.sleep(500);
+       driver.findElement(By.cssSelector(".w-33 > .ng-select-container")).click();
+       driver.findElement(By.xpath("//span[contains(.,'Default Template')]")).click();
+
+       String ImageAbsolutePath = Paths.get("src/main/resources/test.svg").toAbsolutePath().toString();
+       driver.findElement(By.xpath("//input[@type='file']")).sendKeys(ImageAbsolutePath);
+     WebElement AgeVerification=  driver.findElement(By.xpath("//*[text() =' Age verification ']"));
+       JavascriptExecutor js = (JavascriptExecutor) driver;
+       js.executeScript("arguments[0].scrollIntoView(true);", AgeVerification);
+       driver.findElement(By.cssSelector("#mat-mdc-slide-toggle-3-button .mdc-switch__icon--off")).click();
+       Thread.sleep(1000);
+       driver.findElement(By.xpath("//span/p-inputnumber/span/input")).sendKeys("18");
+       WebElement SaveButton = driver.findElement(By.xpath("//*[@class='save-btn-valid']"));
+       js.executeScript("arguments[0].scrollIntoView(true);", SaveButton);
+       Thread.sleep(1000);
+       SaveButton.click();
+
+       return CategoryName;
+
+
+   }
+   public void RemoveAgeRestrictionFromCategory() throws InterruptedException{
+       String CategoryName = createCategoryWithAgeRestriction();
+       Thread.sleep(10000);
+       driver.findElement(By.xpath("//ng-select/div/div/div[2]/input")).sendKeys(CategoryName);
+       Thread.sleep(100);
+       driver.findElement(By.xpath("//div[contains(@class, 'ng-option-marked')]")).click();
+       Thread.sleep(1000);
+       driver.findElement(By.xpath("//img[@alt='Some textual description of gear.svg']")).click();
+       WebElement AgeVerification=  driver.findElement(By.xpath("//*[text() =' Age verification ']"));
+       JavascriptExecutor js = (JavascriptExecutor) driver;
+       js.executeScript("arguments[0].scrollIntoView(true);", AgeVerification);
+       driver.findElement(By.cssSelector("#mat-mdc-slide-toggle-3-button .mdc-switch__icon--off")).click();
+       Thread.sleep(1000);
+       WebElement SaveButton = driver.findElement(By.xpath("//*[@class='save-btn-valid']"));
+       js.executeScript("arguments[0].scrollIntoView(true);", SaveButton);
+       Thread.sleep(1000);
+       SaveButton.click();
+
+
 
    }
 }

@@ -18,6 +18,7 @@ public class Logout {
     }
 
     public void Log_out_operation_portal() throws InterruptedException {
+        Thread.sleep(10000);
         driver.findElement(By.xpath("//a[contains(@href, '#')]")).click();
         Thread.sleep(5000);
     }

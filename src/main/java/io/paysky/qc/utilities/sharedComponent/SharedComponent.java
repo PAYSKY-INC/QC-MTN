@@ -1,9 +1,16 @@
 package io.paysky.qc.utilities.sharedComponent;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 import java.io.*;
 import java.util.Random;
 
+import static io.paysky.qc.utilities.selenium.DriverFactory.driver;
+
 public class SharedComponent {
+    WebDriver driver;
 
     public static String GetRandomNumber() throws IOException {
         String TestFile = System.getProperty("user.dir")+ File.separator +"resources"+File.separator+"d.txt";
@@ -48,5 +55,14 @@ public class SharedComponent {
 
             return new String(password);
         }
+
+        public void scrollDown(){
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+        }
+
+        public  void scrollToElement(WebDriver driver, WebElement element) {   
+            JavascriptExecutor js = (JavascriptExecutor) driver;   
+            js.executeScript("arguments[0].scrollIntoView(true);", element);}
     }
 }

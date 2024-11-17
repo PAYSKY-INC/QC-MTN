@@ -50,7 +50,13 @@ public class DataFaker {
        return faker.number().digits(11);
     }
 
-    public String buisnessName() {return faker.company().name();}
+    public String buisnessName() {
+        String businessName= faker.company().name();
+
+        // Remove special characters using regex, allowing only letters, numbers, and spaces
+        businessName = businessName.replaceAll("[^a-zA-Z0-9 ]", "");
+
+        return businessName;}
 
     public String email() {
         // Generate a random username and domain name

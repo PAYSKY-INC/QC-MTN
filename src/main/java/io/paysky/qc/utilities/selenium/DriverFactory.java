@@ -28,7 +28,7 @@ public class DriverFactory {
         options.addArguments("start-maximized");
         // Use WebDriverManager to set up the latest Chrome driver
         WebDriverManager.chromedriver();
-        options.addArguments("--headless");
+    // options.addArguments("--headless");
         //System.setProperty("webdriver.chrome.driver", "./src/main/resources/chromedriver.exe");
         return new ChromeDriver(options);
     }
