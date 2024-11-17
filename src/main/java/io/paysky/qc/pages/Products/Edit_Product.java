@@ -57,17 +57,17 @@ public class Edit_Product {
         Actions builder = new Actions(driver);
         builder.doubleClick(WeightEditIcon).perform();
     }
+
     public void enterWeight(){
         WebElement WeightField = driver.findElement(By.xpath("//p-inputnumber/span/input"));
         wait.until(ExpectedConditions.elementToBeClickable(WeightField)).clear();
         WeightField.click();
-        {
-            WebElement element = driver.findElement(By.xpath("//p-inputnumber/span/input"));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element).sendKeys(Keys.NUMPAD5);
-        }
-        //WeightField.sendKeys("5");
+        WebElement inputElement = driver.findElement(By.cssSelector("input.p-inputtext.p-component.p-element.p-inputnumber-input"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].removeAttribute('disabled')", inputElement);
+        inputElement.sendKeys("5");
     }
+
    public void enableBestSeller(){
         WebElement BestSellerToggle = driver.findElement(By.cssSelector("#mat-mdc-slide-toggle-2-button > .mdc-switch__track"));
         wait.until(ExpectedConditions.elementToBeClickable(BestSellerToggle)).click();
@@ -96,7 +96,7 @@ public class Edit_Product {
 
        // js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         clickOnEditWeightIcon();
-      enterWeight();
+        enterWeight();
       //  js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
       //  enableBestSeller();
 
