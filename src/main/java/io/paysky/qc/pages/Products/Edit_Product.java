@@ -24,7 +24,7 @@ public class Edit_Product {
 
     // Actions
     public void clickOnMarketPlace() {
-        WebElement SideMenu_MarketPlace = driver.findElement(By.cssSelector(".ng-star-inserted:nth-child(3) > .ng-star-inserted > .d-flex > .ng-star-inserted"));
+        WebElement SideMenu_MarketPlace = driver.findElement(By.xpath("//span[contains(.,'MarketPlace')]"));
         wait.until(ExpectedConditions.elementToBeClickable(SideMenu_MarketPlace)).click();
     }
 
@@ -89,18 +89,10 @@ public class Edit_Product {
         jsExecutor.executeScript("arguments[0].scrollLeft += arguments[1];", scrollableRightLeft, 300);
         clickOnEditIconForUnderReviewProduct();
         Thread.sleep(5000);
+        WebElement salePriceLabel = driver.findElement(By.className("product-input-label"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        WebElement WeightLabel = driver.findElement(By.xpath("//label[contains(.,'Sale Start Date')]"));
-        js.executeScript("arguments[0].scrollIntoView(true);",WeightLabel);
-      //  jsExecutor.executeScript("window.scrollBy(0, arguments[0]);", 500);
-
-       // js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+        js.executeScript("arguments[0].scrollIntoView(true);", salePriceLabel);
         clickOnEditWeightIcon();
         enterWeight();
-      //  js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-      //  enableBestSeller();
-
-
-
     }
 }
