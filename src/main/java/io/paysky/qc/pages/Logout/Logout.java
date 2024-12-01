@@ -23,6 +23,10 @@ public class Logout {
         Thread.sleep(5000);
     }
 
+    public void Log_out_Admin_portal() throws InterruptedException {
+        driver.findElement(By.xpath("//a[contains(@href, '#')]")).click();
+    }
+
     public void Close_driver() throws InterruptedException {
         driver.close();
     }

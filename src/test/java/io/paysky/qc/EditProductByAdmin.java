@@ -24,6 +24,6 @@ public class EditProductByAdmin {
         onboardingPage.setUp();
         loginPage.Login_operation_user();
         edit.editUnderReviewProduct();
-        logout.Log_out_operation_portal();
+       // logout.Log_out_operation_portal();
     }
 }

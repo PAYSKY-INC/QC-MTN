@@ -66,6 +66,13 @@ public class DataFaker {
         return username + "@" + domain;
     }
 
+    public String RandomNumber() {
+        int randomNumber = faker.number().numberBetween(0, 101);
+        String randomNumberAsString = String.valueOf(randomNumber);
+
+        return  randomNumberAsString;
+    }
+
     public String egyNationalID() {
         // Provided Egyptian National ID regex (adjust as needed)
         String pattern = "([2-3]{1})([0-9]{2})(0[1-9]|1[012])(0[1-9]|[1-2][0-9]|3[0-1])(0[1-4]|[1-2][1-9]|3[1-5]|88)[0-9]{3}([0-9]{1})[0-9]{1}";
