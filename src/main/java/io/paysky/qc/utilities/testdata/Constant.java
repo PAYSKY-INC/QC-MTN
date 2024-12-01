@@ -17,6 +17,8 @@ public class Constant {
     public static String MaxAge = "122";
     public static String InvalidMinAge = "9";
     public static String InvalidMaxAge = "123";
+    public static final String Operation_user_UAT = "saeed.momuat.operation@paysky.io";
+    public static final String Operation_password_UAT = "1qaz!QAZzz";
 
 
 }

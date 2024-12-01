@@ -53,8 +53,7 @@ public class Edit_Product {
         wait.until(ExpectedConditions.elementToBeClickable(EditIcon_UnderReviewProduct)).click();
     }
     public void clickOnEditWeightIcon(){
-        WebElement WeightEditIcon = driver.findElement(By.xpath("//div[7]/div/span/a/img"));
-        wait.until(ExpectedConditions.elementToBeClickable(WeightEditIcon));
+        WebElement WeightEditIcon = driver.findElement(By.cssSelector(".position-relative img"));
         Actions builder = new Actions(driver);
         builder.doubleClick(WeightEditIcon).perform();
     }
@@ -89,11 +88,11 @@ public class Edit_Product {
         WebElement scrollableRightLeft = driver.findElement(By.className("p-datatable-wrapper"));
         jsExecutor.executeScript("arguments[0].scrollLeft += arguments[1];", scrollableRightLeft, 300);
         clickOnEditIconForUnderReviewProduct();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        WebElement SalePriceLabel = driver.findElement(By.xpath("//label[contains(.,'Sale Price')]"));
-      js.executeScript("arguments[0].scrollIntoView(true);",SalePriceLabel);
-       jsExecutor.executeScript("window.scrollBy(0, arguments[0]);", 500);
+        WebElement WeightLabel = driver.findElement(By.xpath("//label[contains(.,'Sale Start Date')]"));
+        js.executeScript("arguments[0].scrollIntoView(true);",WeightLabel);
+      //  jsExecutor.executeScript("window.scrollBy(0, arguments[0]);", 500);
 
        // js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         clickOnEditWeightIcon();
