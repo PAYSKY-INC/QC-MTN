@@ -64,6 +64,7 @@ public class LoginPage {
         element1.click();
         driver.findElement(By.xpath("/html/body/app-root/app-mtn-tenant-configuration/div/div[2]/div[2]/div/div/div[2]/div[3]/img")).click();
         Thread.sleep(20500);
+
         driver.get(GlobalProperties.getProperty("Customer_Portal_Login"));
         driver.get(GlobalProperties.getProperty("Customer_Portal_Login"));
         WebElement CustomerUser = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("phone")));

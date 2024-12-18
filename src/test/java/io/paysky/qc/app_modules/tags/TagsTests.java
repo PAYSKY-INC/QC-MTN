@@ -20,12 +20,9 @@ public class TagsTests extends BaseTest {
     @Description("DESCRIPTION")
     @Link(value = "ID FOR AZURE",type = "Testcase",url ="ISSUE URL")
     @Owner("Ayman")
-    public void  createTagWithValidData()
-    {
-        UserRouting.selectUserType(UserConfig.USERENUM.ADMIN);
+    public void  createTagWithValidData() throws Exception {
+        UserRouting.selectUserType(UserConfig.USERENUM.CONSUMER);
         GeneralLogin.loginWithUser();
-
-
     }
 
 
