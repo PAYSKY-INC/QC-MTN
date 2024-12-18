@@ -29,9 +29,17 @@ public class EnvironmentConfig {
         String baseUrl = null;
         Env env = envStringToEnum();
 
-        if (userenum == UserConfig.USERENUM.ADMIN && env == Env.UAT) {
+
+        if (userenum == UserConfig.USERENUM.OPERATION && env == Env.UAT) {
             baseUrl = "https://marketuat.momo.africa:1019";
-        } else if (userenum == UserConfig.USERENUM.ADMIN && env == Env.PREPROD) {
+        }
+         else if(userenum == UserConfig.USERENUM.ADMIN && env == Env.UAT) {
+            baseUrl = "https://marketuat.momo.africa:1019";
+        }
+        else if (userenum == UserConfig.USERENUM.OPERATION && env == Env.PREPROD) {
+            baseUrl = "https://momomarketstg.africa/Admin/auth";
+        }
+         else if (userenum == UserConfig.USERENUM.ADMIN && env == Env.PREPROD) {
             baseUrl = "https://momomarketstg.africa/Admin/auth";
         }
         else if (userenum == UserConfig.USERENUM.MERCHANT && env == Env.UAT) {
