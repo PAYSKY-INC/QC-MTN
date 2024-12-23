@@ -10,19 +10,27 @@ import org.testng.annotations.Test;
 public class TagsTests extends BaseTest {
 
 
-    TagsPage tagsPage= new TagsPage();
-
+    TagsPage tagsPage = new TagsPage();
 
     @Test(description = "Delete Role")
     @Epic("EPIC NAME AND ID")
     @Story("STORY NAME AND ID")
     @Severity(SeverityLevel.CRITICAL)
     @Description("DESCRIPTION")
-    @Link(value = "ID FOR AZURE",type = "Testcase",url ="ISSUE URL")
+    @Link(value = "ID FOR AZURE", type = "Testcase", url = "ISSUE URL")
     @Owner("Ayman")
-    public void  createTagWithValidData() throws Exception {
-        UserRouting.selectUserType(UserConfig.USERENUM.CONSUMER);
+    public void createTagWithValidData() throws Exception {
+        UserRouting.selectUserType(UserConfig.USERENUM.OPERATION);
         GeneralLogin.loginWithUser();
+
+        tagsPage
+                .openTagsScreenFromSideMenu()
+                .openCreateNewTagPopup()
+                .writeTagName("Tag Fully Created by Automation")
+                .selectTagClassification()
+                .clickSaveButton()
+                .closeSuccessCreatingTags();
+
     }
 
 
