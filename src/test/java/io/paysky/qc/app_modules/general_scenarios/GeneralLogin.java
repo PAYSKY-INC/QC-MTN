@@ -64,13 +64,14 @@ public class GeneralLogin extends BaseTest {
 
         else if (GlobalProperties.globalUserType==UserConfig.USERENUM.CONSUMER)
         {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(500));
-            Thread.sleep(5000);
-            WebElement element1=  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/modal-container/div[2]/div/app-cookie-modal/div/div/div[4]/button[1]")));
-            element1.click();
-            driver.findElement(By.xpath("/html/body/app-root/app-mtn-tenant-configuration/div/div[2]/div[2]/div/div/div[2]/div[3]/img")).click();
-            Thread.sleep(10000);
-            driver.get("https://marketuat.momo.africa:1018/login");
+
+            loginPage.clickCountryButton();
+            loginPage.openSignInPage();
+            loginPage.writePhoneNumber(userName);
+            loginPage.CONSUMERWritePassword(password);
+
+
+//
 //            WebElement CustomerUser = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("phone")));
 //            Thread.sleep(10000);
 //            CustomerUser.sendKeys(userName);
