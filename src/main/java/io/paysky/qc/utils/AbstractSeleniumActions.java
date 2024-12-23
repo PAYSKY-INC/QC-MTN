@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.nio.file.Paths;
 import java.time.Duration;
 
 import static io.paysky.qc.utilities.selenium.DriverFactory.driver;
@@ -102,6 +103,14 @@ public class AbstractSeleniumActions extends BaseTest {
             return false;
         }
     }
+
+    public void uploadImage(final By by, String imagePath, int duration) throws Exception {
+        waitForPresenceOf(by,duration);
+        System.out.println("Uploading image from " + imagePath);
+        driver.findElement(by).sendKeys(imagePath);
+    }
+
+
 
 
 }
