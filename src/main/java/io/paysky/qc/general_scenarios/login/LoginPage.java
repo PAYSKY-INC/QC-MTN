@@ -40,6 +40,39 @@ public class LoginPage extends AbstractSeleniumActions {
 
 
 
+    //CONSUMER
+
+
+    private final By CONSUMERclickCountryButton = By.xpath("/html/body/modal-container/div[2]/div/app-cookie-modal/div/div/div[4]/button[1]");
+    private final By CONSUMERclickCountryButton1 = By.xpath("/html/body/app-root/app-mtn-tenant-configuration/div/div[2]/div[2]/div/div/div[2]/div[3]/img");
+
+    private final By signInPageButton = By.linkText("Sign-In");
+    private final By phoneNumberTextField = By.linkText("phone");
+    private final By CONSUMERPasswordTextField = By.cssSelector(".p-inputtext");
+
+    public void clickCountryButton() throws Exception {
+        Thread.sleep(5000);
+        clickOnElement(CONSUMERclickCountryButton, 25);
+        clickOnElement(CONSUMERclickCountryButton1, 25);
+        Thread.sleep(10000);
+    }
+
+
+    public void openSignInPage() throws Exception {
+        clickOnElement(signInPageButton,20);
+        Thread.sleep(10000);
+    }
+
+    public void writePhoneNumber(String phoneNumber) throws Exception {
+        typeText(phoneNumberTextField,phoneNumber,20);
+    }
+
+    public void CONSUMERWritePassword(String password) throws Exception {
+        typeText(CONSUMERPasswordTextField,password,20);
+    }
+
+
+
 
 
 
