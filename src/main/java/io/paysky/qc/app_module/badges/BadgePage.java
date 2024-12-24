@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import java.nio.file.Paths;
 
 public class BadgePage extends AbstractSeleniumActions {
-    private final By badgeManagementOption =  By.xpath("//span[normalize-space()='Badge Management']");;
+    private final By badgeManagementOption =  By.xpath("//span[normalize-space()='Badge Management']");
     private final By newButton = By.xpath("//button[normalize-space()='New']");
     private final By badgeNameTextField = By.xpath("(//label[normalize-space(text())='Badge name:']/following::input)[1]");
 
