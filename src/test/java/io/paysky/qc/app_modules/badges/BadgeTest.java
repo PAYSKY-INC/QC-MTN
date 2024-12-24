@@ -21,7 +21,7 @@ public class BadgeTest extends BaseTest {
     @Description("Create New Badge with Valid Data")
     @Link(value = "ID 69097",type = "Testcase",url ="https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_testPlans/execute?planId=68943&suiteId=68948")
     @Owner("Nada")
-    public void  addNewBagdeWithValidData() throws Exception {
+    public void  addNewBadgeWithValidData() throws Exception {
         UserRouting.selectUserType(UserConfig.USERENUM.OPERATION);
         GeneralLogin.loginWithUser();
 
@@ -31,6 +31,13 @@ public class BadgeTest extends BaseTest {
         badgePage.enterBadgeNameTextField(faker.badgeName());
         badgePage.clickOnBadgeDesktopImageField();
         badgePage.uploadDeskTopImage();
-        Thread.sleep(10000);
+        badgePage.clickOnBadgeMobileImageField();
+        badgePage.uploadMobileImage();
+        badgePage.clickOnAddNewTagButton();
+        badgePage.clickOnTagDropdownList();
+        badgePage.selectTag();
+        badgePage.clickOnSaveButton();
+        badgePage.clickOnSuccessPopupOkButton();
+        Thread.sleep(5000);
     }
 }
