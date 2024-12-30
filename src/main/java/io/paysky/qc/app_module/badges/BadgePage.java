@@ -21,9 +21,14 @@ public class BadgePage extends AbstractSeleniumActions {
     private final By tagDropdownList = By.xpath("//div[@class='ng-select-container']");
     private final By selectTagOption = By.xpath("(//div[@role='option'])[1]");
     private final By saveButton = By.xpath("//button[normalize-space()='Save']");
+    private final By displayOnProductToggle  = By.xpath("//div[@class='mdc-switch__handle-track']");
 
     private final By successMsgOkButton = By.xpath("//span[normalize-space(text())='OK']");
 
+    private final By deleteBadgeIcon = By.xpath("//tbody/tr[1]/td[7]/a[1]/img[1]");
+    private final By proceedDeleteButton = By.xpath("(//a[@class='action-btn'])[2]");
+
+    private final By editBageIcon = By.xpath("//tbody/tr[1]/td[6]");
 
 
     public void openBadgeManagementScreen() throws Exception{
@@ -77,5 +82,29 @@ public class BadgePage extends AbstractSeleniumActions {
     public void clickOnSuccessPopupOkButton() throws Exception{
         Thread.sleep(5000);
         clickOnElement(successMsgOkButton, 25);
+    }
+    public void clickOnDisplayOnProductToggle() throws Exception{
+        Thread.sleep(5000);
+        clickOnElement(displayOnProductToggle, 25);
+    }
+
+    public void clickOnDeleteBadgeIcon() throws Exception{
+        Thread.sleep(5000);
+        clickOnElement(deleteBadgeIcon, 25);
+    }
+
+    public void clickOnProceedDeleteButton() throws Exception{
+        Thread.sleep(5000);
+        clickOnElement(proceedDeleteButton, 25);
+    }
+
+    public void clickOnEditBadgeIcon() throws Exception{
+        Thread.sleep(5000);
+        clickOnElement(editBageIcon, 25);
+    }
+
+    public void clearBadgeNameText() throws Exception{
+        Thread.sleep(5000);
+        findElementByLocatorWithVisibility(badgeNameTextField, 25).clear();
     }
 }

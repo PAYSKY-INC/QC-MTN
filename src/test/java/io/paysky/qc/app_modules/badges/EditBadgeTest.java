@@ -9,35 +9,29 @@ import io.paysky.qc.utils.UserRouting;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
-public class BadgeTest extends BaseTest {
-
+public class EditBadgeTest extends BaseTest {
     BadgePage badgePage = new BadgePage();
     DataFaker faker = new DataFaker();
 
-    @Test(description = "Create Badge")
+    @Test(description = "Edit badge")
     @Epic("EPIC NAME AND ID")
-    @Story("68076: [Backoffice] Create Badge")
-    @Severity(SeverityLevel.CRITICAL)
-    @Description("Create New Badge with Valid Data")
-    @Link(value = "ID 69097",type = "Testcase",url ="https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_testPlans/execute?planId=68943&suiteId=68948")
+    @Story("68077: [Backoffice] Edit Badge")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Edit badge an old created badge Name to a new name")
+    @Link(value = "ID 69208",type = "Testcase",url ="https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/69208")
     @Owner("Nada")
-    public void  addNewBadgeWithValidData() throws Exception {
+    public void editBadgeName()throws Exception{
         UserRouting.selectUserType(UserConfig.USERENUM.OPERATION);
         GeneralLogin.loginWithUser();
 
         badgePage.openBadgeManagementScreen();
-        badgePage.clickOnNewButton();
+        badgePage.clickOnEditBadgeIcon();
         badgePage.clickOnBadgeNameTextField();
+        badgePage.clearBadgeNameText();
         badgePage.enterBadgeNameTextField(faker.badgeName());
-        badgePage.clickOnBadgeDesktopImageField();
-        badgePage.uploadDeskTopImage();
-        badgePage.clickOnBadgeMobileImageField();
-        badgePage.uploadMobileImage();
-        badgePage.clickOnAddNewTagButton();
-        badgePage.clickOnTagDropdownList();
-        badgePage.selectTag();
         badgePage.clickOnSaveButton();
         badgePage.clickOnSuccessPopupOkButton();
         Thread.sleep(5000);
+
     }
 }
