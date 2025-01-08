@@ -69,6 +69,7 @@ public class GeneralLogin extends BaseTest {
             loginPage.openSignInPage();
             loginPage.writePhoneNumber(userName);
             loginPage.CONSUMERWritePassword(password);
+            loginPage.CONSUMERSubmitLogin();
 
 
 //
