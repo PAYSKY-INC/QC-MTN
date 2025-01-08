@@ -30,7 +30,6 @@ public class TagsTests extends BaseTest {
                 .selectTagClassification()
                 .clickSaveButton()
                 .closeSuccessCreatingTags();
-
     }
 
 
