@@ -97,7 +97,7 @@ public class CategoryCommission {
         add.add_Commission_Against_Market_Place();
        logout.Log_out_Admin_portal();
     }
-    @org.testng.annotations.Test(priority = 6)
+    @org.testng.annotations.Test(priority = 7)
     @Description("To verify User is adding commission against Marketplace with Disable Toggle Button and Insert Commission")
     @Link("https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/17667")
     @Owner("Eman Mohamed")
@@ -108,7 +108,7 @@ public class CategoryCommission {
         add.add_Commission_For_Market_Place_When_ToggleDisabled();
         logout.Log_out_Admin_portal();
     }
-    @org.testng.annotations.Test(priority = 7)
+    @org.testng.annotations.Test(priority = 8)
     @Description("To verify user can't add commission against marketplace more then 100%")
     @Link("https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/17668")
     @Owner("Eman Mohamed")
@@ -119,7 +119,7 @@ public class CategoryCommission {
         add.add_Commission_With_Value_MoreThan100_InMarketPlace();
         logout.Log_out_Admin_portal();
     }
-    @org.testng.annotations.Test(priority = 8)
+    @org.testng.annotations.Test(priority = 9)
     @Description("To verify User is adding commission against Marketplace below then 0% ")
     @Link("https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/17672")
     @Owner("Eman Mohamed")
@@ -130,7 +130,7 @@ public class CategoryCommission {
         add.add_Commission_With_Value_LessThan0_InMarketPlace();
         logout.Log_out_Admin_portal();
     }
-    @org.testng.annotations.Test(priority = 9)
+    @org.testng.annotations.Test(priority = 10)
     @Description("adding commission against Marketplace in between 0% to 100%.")
     @Link("https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/17670")
     @Owner("Eman Mohamed")
@@ -141,7 +141,7 @@ public class CategoryCommission {
         add.add_commission_With_Value_Between0and100_InMarketPlace();
         logout.Log_out_Admin_portal();
     }
-    @org.testng.annotations.Test(priority = 10)
+    @org.testng.annotations.Test(priority = 11)
     @Description("verify User can't add commission against Marketplace like Alphabets A,b,x")
     @Link("https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/17673")
     @Owner("Eman Mohamed")
@@ -153,7 +153,7 @@ public class CategoryCommission {
         logout.Log_out_Admin_portal();
 
     }
-    @org.testng.annotations.Test(priority = 11)
+    @org.testng.annotations.Test(priority = 12)
     @Description("verify User can't add commission against Marketplace like symbolic value (?<#@)" )
     @Link("https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/17674")
     @Owner("Eman Mohamed")
@@ -165,7 +165,7 @@ public class CategoryCommission {
         logout.Log_out_Admin_portal();
 
     }
-    @org.testng.annotations.Test(priority = 12)
+    @org.testng.annotations.Test(priority = 13)
     @Description("verify User add commission against Storefront with Enable Toggle")
     @Link("https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/17677")
     @Owner("Eman Mohamed")
@@ -176,7 +176,7 @@ public class CategoryCommission {
         add.Check_That_Can_Enable_StoreFront_Toggle();
         logout.Log_out_Admin_portal();
     }
-    @org.testng.annotations.Test(priority = 13)
+    @org.testng.annotations.Test(priority = 14)
     @Description("verify User can't add commission against Storefront with Disable Toggle and Insert Commission")
     @Link("https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/17679")
     @Owner("Eman Mohamed")
@@ -188,7 +188,7 @@ public class CategoryCommission {
         logout.Log_out_Admin_portal();
 
     }
-    @org.testng.annotations.Test(priority = 14)
+    @org.testng.annotations.Test(priority = 15)
     @Description("verify User can't add commission without select category")
     @Link("https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/17682")
     @Owner("Eman Mohamed")
@@ -200,7 +200,7 @@ public class CategoryCommission {
         logout.Log_out_Admin_portal();
 
     }
-    @org.testng.annotations.Test(priority = 15)
+    @org.testng.annotations.Test(priority = 16)
     @Description("verify User can't add commission without applying commission in platform")
     @Link("https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/17682")
     @Owner("Eman Mohamed")
@@ -212,7 +212,7 @@ public class CategoryCommission {
         logout.Log_out_Admin_portal();
 
     }
-    @org.testng.annotations.Test(priority = 16)
+    @org.testng.annotations.Test(priority = 17)
     @Description("To verify user is Editing commission for the specific category")
     @Link("https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/17696")
     @Owner("Eman Mohamed")
@@ -223,7 +223,7 @@ public class CategoryCommission {
         edit.check_Click_On_Edit_Icon();
     }
 
-    @org.testng.annotations.Test(priority = 17)
+    @org.testng.annotations.Test(priority = 18)
     @Description("To verify Data of saved Category is loaded on page")
     @Link("https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/17698")
     @Owner("Eman Mohamed")
@@ -234,7 +234,7 @@ public class CategoryCommission {
         edit.Check_Previous_Data_Saved_Before();
     }
 
-    @org.testng.annotations.Test(priority = 18)
+    @org.testng.annotations.Test(priority = 19)
     @Description("To verify user is updating commission against Marketplace or Storefront with toggle button")
     @Link("https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/17703")
     @Owner("Eman Mohamed")
@@ -245,7 +245,7 @@ public class CategoryCommission {
         edit.Check_That_Toggles_Clickable_In_EditPage();
     }
 
-    @org.testng.annotations.Test(priority = 19)
+    @org.testng.annotations.Test(priority = 20)
     @Description("To verify updated commission is reflecting in the Marketplace and/or Storefront with No changes")
     @Link("https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/17709")
     @Owner("Eman Mohamed")

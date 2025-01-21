@@ -29,56 +29,12 @@ public class Create_order {
     @Owner("Mohamed Ehab")
     @Tag("End-To-End")
 
-    public void LoginWithMerchant() throws Exception {
-        onboardingPage.setUp();
-        loginPage.Login_merchant_user();
-    }
-
-    @org.testng.annotations.Test(priority = 2)
-    @Description("Check that the user can login with valid credentials")
-    @Link("https://devops.paysky.io/DefaultCollection/Infinity/_workitems/edit/62811")
-    @Owner("Mohamed Ehab")
-    @Tag("End-To-End")
-
-    public void CreateNewProduct() throws Exception {
-        createNewProduct.createNewProduct();
-        logoutPage.Log_out_merchant_portal();
-    }
-
-    @org.testng.annotations.Test(priority = 3)
-    @Description("Check that the user can login with valid credentials")
-    @Link("https://devops.paysky.io/DefaultCollection/Infinity/_workitems/edit/62811")
-    @Owner("Mohamed Ehab")
-    @Tag("End-To-End")
-
-    public void LoginWithOperation() throws Exception {
-        onboardingPage.setUp();
-        loginPage.Login_operation_user();
-    }
-
-    @org.testng.annotations.Test(priority = 4)
-    @Description("Check that the user can login with valid credentials")
-    @Link("https://devops.paysky.io/DefaultCollection/Infinity/_workitems/edit/62811")
-    @Owner("Mohamed Ehab")
-    @Tag("End-To-End")
-
-    public void ApproveProduct() throws Exception {
-        approveProduct.Approve_Product();
-        logoutPage.Log_out_operation_portal();
-    }
-
-    @org.testng.annotations.Test(priority = 5)
-    @Description("Check that the user can login with valid credentials")
-    @Link("https://devops.paysky.io/DefaultCollection/Infinity/_workitems/edit/62811")
-    @Owner("Mohamed Ehab")
-    @Tag("End-To-End")
-
     public void LoginWithCustomer() throws Exception {
         onboardingPage.setUp();
         loginPage.Login_customer_user();
     }
 
-    @org.testng.annotations.Test(priority = 6)
+    @org.testng.annotations.Test(priority = 2)
     @Description("Check that the user can login with valid credentials")
     @Link("https://devops.paysky.io/DefaultCollection/Infinity/_workitems/edit/62811")
     @Owner("Mohamed Ehab")
@@ -88,7 +44,7 @@ public class Create_order {
         createOrder.Create_Order();
     }
 
-    @org.testng.annotations.Test(priority = 7)
+    @org.testng.annotations.Test(priority = 3)
     @Description("Check that the user can login with valid credentials")
     @Link("https://devops.paysky.io/DefaultCollection/Infinity/_workitems/edit/62811")
     @Owner("Mohamed Ehab")

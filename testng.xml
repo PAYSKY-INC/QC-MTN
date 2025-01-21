@@ -2,6 +2,7 @@
 <suite name="MTN-Portal">
     <test name="Login" verbose="1">
         <classes>
+            <class name="io.paysky.qc.Create_Product"/>
             <class name="io.paysky.qc.Create_order"/>
         </classes>
     </test>
