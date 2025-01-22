@@ -18,6 +18,11 @@ public class DataFaker {
     public String JobPosition(){return faker.job().position();}
     public String adress(){return faker.address().fullAddress();}
     public String name(){return faker.name().firstName();}
+    public String badgeName(){
+        String badgematerial = faker.commerce().material();
+        String badgeProductName = faker.commerce().productName();
+        return badgematerial + ' ' + badgeProductName;
+    }
 
     public String generateEmail(String fullName) {
         String[] nameParts = fullName.split(" ");

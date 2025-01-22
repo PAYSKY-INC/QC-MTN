@@ -38,7 +38,6 @@ public class Age_Verification {
     @Link("https://devops.paysky.io/DefaultCollection/MTN%20PRODUCT/_workitems/edit/65649")
     @Owner("Eman Mohamed")
     @Tag("End-To-End")
-
     public void ModifyAgeVerificationWithMinValidAgeIs10() throws InterruptedException{
         onboardingPage.setUp();
         loginPage.Login_operation_user();
