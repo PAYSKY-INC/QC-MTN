@@ -47,8 +47,10 @@ public class LoginPage extends AbstractSeleniumActions {
     private final By CONSUMERclickCountryButton1 = By.xpath("/html/body/app-root/app-mtn-tenant-configuration/div/div[2]/div[2]/div/div/div[2]/div[3]/img");
 
     private final By signInPageButton = By.linkText("Sign-In");
-    private final By phoneNumberTextField = By.linkText("phone");
-    private final By CONSUMERPasswordTextField = By.cssSelector(".p-inputtext");
+    private final By phoneNumberTextField = By.id("phone");
+    private final By CONSUMERPasswordTextField = By.cssSelector("input[type='password']");
+    private final By CONSUMERLoginButton = By.cssSelector("button[type='button']");
+
 
     public void clickCountryButton() throws Exception {
         Thread.sleep(5000);
@@ -60,7 +62,7 @@ public class LoginPage extends AbstractSeleniumActions {
 
     public void openSignInPage() throws Exception {
         clickOnElement(signInPageButton,20);
-        Thread.sleep(10000);
+        Thread.sleep(3000);
     }
 
     public void writePhoneNumber(String phoneNumber) throws Exception {
@@ -69,9 +71,16 @@ public class LoginPage extends AbstractSeleniumActions {
 
     public void CONSUMERWritePassword(String password) throws Exception {
         typeText(CONSUMERPasswordTextField,password,20);
+
     }
 
 
+
+
+    public void CONSUMERSubmitLogin() throws Exception {
+        clickOnElement(CONSUMERLoginButton,20);
+        Thread.sleep(10000);
+    }
 
 
 
